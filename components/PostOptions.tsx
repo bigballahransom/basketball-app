@@ -5,7 +5,7 @@ import { MessageCircle, Repeat2, Send, ThumbsUpIcon } from "lucide-react";
 import CommentForm from "./CommentForm";
 import CommentFeed from "./CommentFeed";
 import { useUser } from "@clerk/nextjs";
-import { LikePostRequestBody } from "../app/api/posts/[post_id]/like/route";
+// import { LikePostRequestBody } from "../app/api/posts/[post_id]/like/route";
 import { IPostDocument } from "@/mongodb/models/post";
 import { cn } from "@/lib/utils";
 import { UnlikePostRequestBody } from "@/app/api/posts/[post_id]/unlike/route";
@@ -30,51 +30,51 @@ function PostOptions({
     }
   }, [post, user]);
 
-  const likeOrUnlikePost = async () => {
-    if (!user?.id) {
-      throw new Error("User not authenticated");
-    }
+//   const likeOrUnlikePost = async () => {
+//     if (!user?.id) {
+//       throw new Error("User not authenticated");
+//     }
 
-    const originalLiked = liked;
-    const originalLikes = likes;
+//     const originalLiked = liked;
+//     const originalLikes = likes;
 
-    const newLikes = liked
-      ? likes?.filter((like) => like !== user.id)
-      : [...(likes ?? []), user.id];
+//     const newLikes = liked
+//       ? likes?.filter((like) => like !== user.id)
+//       : [...(likes ?? []), user.id];
 
-    const body: LikePostRequestBody | UnlikePostRequestBody = {
-      userId: user.id,
-    };
+//     // const body: LikePostRequestBody | UnlikePostRequestBody = {
+//     //   userId: user.id,
+//     // };
 
-    setLiked(!liked);
-    setLikes(newLikes);
+//     setLiked(!liked);
+//     setLikes(newLikes);
 
-    const response = await fetch(
-      `/api/posts/${postId}/${liked ? "unlike" : "like"}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...body }),
-      }
-    );
+//     const response = await fetch(
+//       `/api/posts/${postId}/${liked ? "unlike" : "like"}`,
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ ...body }),
+//       }
+//     );
 
-    if (!response.ok) {
-      setLiked(originalLiked);
-      throw new Error("Failed to like post");
-    }
+//     if (!response.ok) {
+//       setLiked(originalLiked);
+//       throw new Error("Failed to like post");
+//     }
 
-    const fetchLikesResponse = await fetch(`/api/posts/${postId}/like`);
-    if (!fetchLikesResponse.ok) {
-      setLikes(originalLikes);
-      throw new Error("Failed to fetch likes");
-    }
+//     const fetchLikesResponse = await fetch(`/api/posts/${postId}/like`);
+//     if (!fetchLikesResponse.ok) {
+//       setLikes(originalLikes);
+//       throw new Error("Failed to fetch likes");
+//     }
 
-    const newLikesData = await fetchLikesResponse.json();
+//     const newLikesData = await fetchLikesResponse.json();
 
-    setLikes(newLikesData);
-  };
+//     setLikes(newLikesData);
+//   };
 
   return (
     <div className="">
@@ -103,7 +103,7 @@ function PostOptions({
         <Button
           variant="ghost"
           className="postButton"
-          onClick={likeOrUnlikePost}
+        //   onClick={likeOrUnlikePost}
         >
           {/* If user has liked the post, show filled thumbs up icon */}
           <ThumbsUpIcon
