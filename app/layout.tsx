@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import {
   ClerkProvider,
 } from '@clerk/nextjs'
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <html lang="en">
         <body className='min-h-screen flex flex-col'>
           {/* toast */}
+          <Toaster/>
           <header className='border-b sticky top-0 z-50'>
             <Header/>
           </header>

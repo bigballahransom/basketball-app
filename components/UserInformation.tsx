@@ -18,7 +18,7 @@ async function UserInformation({ posts }: { posts: IPostDocument[] }) {
   ) || [];
 
   return (
-    <div className="flex flex-col justify-center items-center bg-white mr-6 rounded-lg border py-4">
+    <div className="flex flex-col justify-center items-center bg-white rounded-lg border py-4 mb-2">
       <Avatar className="h-16 w-16 mb-5">
         {user?.id ? (
           <AvatarImage src={imageUrl} />

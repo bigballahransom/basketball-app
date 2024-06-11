@@ -35,7 +35,7 @@ const Header = () => {
             <p>Home</p>
         </Link>
 
-        <Link href='/' className='icon flex'>
+        <Link href='/tournaments' className='icon flex'>
             <Trophy className='h-6 text-gray-600 '/>
             <p>Tournaments</p>
         </Link>
