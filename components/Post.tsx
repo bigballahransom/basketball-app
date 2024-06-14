@@ -38,21 +38,6 @@ function Post({ post }: { post: IPostDocument }) {
                   Author
                 </Badge>
               )}
-              {post.neighborhood && (
-              <Badge className="ml-2">
-                  {post.sport}
-                </Badge>
-                )}
-              {post.city && (
-              <Badge className="ml-2 bg-purple-500 text-white">
-                  {post.city}
-                </Badge>
-                )}
-                {post.neighborhood && (
-              <Badge className="ml-2 bg-purple-300 text-white">
-                  {post.city}
-                </Badge>
-                )}
             </p>
             <p className="text-xs text-gray-400">
               @{post.user.firstName}
@@ -82,8 +67,24 @@ function Post({ post }: { post: IPostDocument }) {
         </div>
       </div>
 
-      <div className="">
-        <p className="px-4 pb-2 mt-2">{post.text}</p>
+      <div className="px-4 pb-2 mt-2">
+        <p>{post.text}</p>
+        <div className="font-semibold mt-2">
+          {post.sport && (
+            <Badge className="">{post.sport}</Badge>
+          )}
+          {post.city && (
+            <Badge className="ml-2 bg-purple-500 text-white">
+              {post.city}
+            </Badge>
+          )}
+          {post.neighborhood && (
+            <Badge className="ml-2 bg-purple-300 text-white">
+              {post.neighborhood}
+            </Badge>
+          )}
+        </div>
+      </div>
 
         {/* If image uploaded put it here... */}
         {post.imageUrl && (
@@ -95,7 +96,6 @@ function Post({ post }: { post: IPostDocument }) {
             className="w-full mx-auto"
           />
         )}
-      </div>
 
       <PostOptions postId={post._id as string} post={post} />
     </div>

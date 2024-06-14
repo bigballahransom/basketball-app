@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useRef, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
@@ -105,51 +105,42 @@ function PostForm() {
           </div>
         )} */}
         <div className="mt-2">
-          <Select>
+          <Select onValueChange={(value) => setCity(value)}>
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select City" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="City1">Seattle</SelectItem>
+              <SelectItem value="Seattle">Seattle</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div className="mt-2">
-          <Select>
+          <Select onValueChange={(value) => setNeighborhood(value)}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select Neighborhood" />
+              <SelectValue placeholder="Select Location" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Neighborhood1">Cascade Playground</SelectItem>
-              <SelectItem value="Neighborhood2">Cal Anderson Park</SelectItem>
-              <SelectItem value="Neighborhood3">Tt Minor Court</SelectItem>
-              <SelectItem value="Neighborhood4">Miller Playground</SelectItem>
+              <SelectItem value="Cascade Playground">Cascade Playground</SelectItem>
+              <SelectItem value="Cal Anderson Park">Cal Anderson Park</SelectItem>
+              <SelectItem value="Tt Minor Court">Tt Minor Court</SelectItem>
+              <SelectItem value="Miller Playground">Miller Playground</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div className="mt-2">
-          <Select>
+          <Select onValueChange={(value) => setSport(value)}>
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select Sport" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Basketball">Basketball</SelectItem>
-              <SelectItem value="Football">Pickle Ball</SelectItem>
-              <SelectItem value="Tennis">Golf</SelectItem>
-              <SelectItem value="Tennis">Ultimate Frisbee</SelectItem>
+              <SelectItem value="Pickle Ball">Pickle Ball</SelectItem>
+              <SelectItem value="Golf">Golf</SelectItem>
+              <SelectItem value="Ultimate Frisbee">Ultimate Frisbee</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div className="flex justify-end mt-2">
-          {/* <Button 
-                type='button' 
-                onClick={() => fileInputRef.current?.click()} 
-                variant={preview ? "secondary" : "outline"}
-            >
-                <ImageIcon className='mr-2' size={16} color='currentColor'/>
-                {preview ? "Change" : "Add"} Image
-            </Button> */}
-          {/* Add remove preview button */}
           {preview && (
             <Button
               type="button"
@@ -172,5 +163,6 @@ function PostForm() {
 }
 
 export default PostForm;
+
 
 
