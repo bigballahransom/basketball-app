@@ -3,11 +3,16 @@ import { IPostBase, Post } from "@/mongodb/models/post";
 import { IUser } from "@/types/user";
 import { NextResponse } from "next/server";
 
+// Assuming this file is located at /app/api/posts/route.ts
 export interface AddPostRequestBody {
   user: IUser;
   text: string;
-  imageUrl?: string | null;
+  imageUrl?: string;
+  city?: string;
+  neighborhood?: string;
+  sport?: string;
 }
+
 
 export async function POST(request: Request) {
   //  auth().protect();

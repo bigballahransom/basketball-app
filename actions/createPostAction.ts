@@ -79,7 +79,7 @@
 
 //   revalidatePath("/");
 // }
-"use server";
+'use server';
 
 import { AddPostRequestBody } from "../app/api/posts/route";
 import { Post } from "@/mongodb/models/post";
@@ -96,6 +96,9 @@ export default async function createPostAction(formData: FormData) {
 
   const user = await currentUser();
   const postInput = formData.get("postInput") as string;
+  const city = formData.get("city") as string;
+  const neighborhood = formData.get("neighborhood") as string;
+  const sport = formData.get("sport") as string;
   const image = formData.get("image") as File;
   let image_url = undefined;
 
@@ -150,6 +153,9 @@ export default async function createPostAction(formData: FormData) {
         user: userDB,
         text: postInput,
         imageUrl: image_url,
+        city,
+        neighborhood,
+        sport,
       };
 
       await Post.create(body);
@@ -157,6 +163,9 @@ export default async function createPostAction(formData: FormData) {
       const body: AddPostRequestBody = {
         user: userDB,
         text: postInput,
+        city,
+        neighborhood,
+        sport,
       };
 
       await Post.create(body);

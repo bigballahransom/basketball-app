@@ -8,6 +8,9 @@ export interface IPostBase {
   imageUrl?: string;
   comments?: IComment[];
   likes?: string[];
+  city?: string;           // Added field
+  neighborhood?: string;   // Added field
+  sport?: string;          // Added field
 }
 
 export interface IPost extends IPostBase, Document {
@@ -44,7 +47,10 @@ const PostSchema = new Schema<IPostDocument>(
     text: { type: String, required: true },
     imageUrl: { type: String },
     comments: { type: [Schema.Types.ObjectId], ref: "Comment", default: [] },
-    likes: { type: [String] },
+    likes: { type: [String], default: [] },
+    city: { type: String },         // Added field
+    neighborhood: { type: String }, // Added field
+    sport: { type: String },        // Added field
   },
   {
     timestamps: true,
@@ -91,7 +97,6 @@ PostSchema.statics.getAllPosts = async function () {
       .sort({ createdAt: -1 })
       .populate({
         path: "comments",
-
         options: { sort: { createdAt: -1 } },
       })
       .populate("likes")
@@ -114,7 +119,6 @@ PostSchema.methods.getAllComments = async function () {
   try {
     await this.populate({
       path: "comments",
-
       options: { sort: { createdAt: -1 } },
     });
     return this.comments;
@@ -126,4 +130,5 @@ PostSchema.methods.getAllComments = async function () {
 export const Post =
   (models.Post as IPostModel) ||
   mongoose.model<IPostDocument, IPostModel>("Post", PostSchema);
+
   
