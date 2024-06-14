@@ -83,7 +83,7 @@ function PostOptions({
         <div>
           {likes && likes.length > 0 && (
             <p className="text-xs text-gray-500 cursor-pointer hover:underline">
-              {likes.length} likes
+              {likes.length} players going
             </p>
           )}
         </div>
@@ -109,7 +109,7 @@ function PostOptions({
           <ThumbsUpIcon
             className={cn("mr-1", liked && "text-[#662d91] fill-[#662d91]")}
           />
-          Like
+          Playing
         </Button>
 
         <Button

@@ -111,6 +111,8 @@ function PostForm() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Seattle">Seattle</SelectItem>
+              <SelectItem value="Bellevue">Bellevue</SelectItem>
+              <SelectItem value="Mercer Island">Mercer Island</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -121,8 +123,9 @@ function PostForm() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Cascade Playground">Cascade Playground</SelectItem>
-              <SelectItem value="Cal Anderson Park">Cal Anderson Park</SelectItem>
-              <SelectItem value="Tt Minor Court">Tt Minor Court</SelectItem>
+              <SelectItem value="Cal Anderson Park">Cal-Anderson Park</SelectItem>
+              <SelectItem value="Greenlake">Greenlake</SelectItem>
+              <SelectItem value="Tt Minor Court">T.T. Minor Playground</SelectItem>
               <SelectItem value="Miller Playground">Miller Playground</SelectItem>
             </SelectContent>
           </Select>

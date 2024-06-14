@@ -50,9 +50,9 @@ const Header = () => {
           <p>Tournaments</p>
         </Link>
         
-        <Link href="/my-stats" className="icon flex">
+        <Link href="/profile" className="icon flex">
           <BarChart2 className={`h-6 ${getIconColor("/my-stats")}`} />
-          <p>My Stats</p>
+          <p>Profile</p>
         </Link>
         
         {/* User */}
