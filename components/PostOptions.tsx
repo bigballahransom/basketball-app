@@ -107,7 +107,7 @@ function PostOptions({
           onClick={likeOrUnlikePost}
         >
           <ThumbsUpIcon
-            className={cn("mr-1", liked && "text-[#4881c2] fill-[#4881c2]")}
+            className={cn("mr-1", liked && "text-[#662d91] fill-[#662d91]")}
           />
           Like
         </Button>

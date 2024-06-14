@@ -1,7 +1,7 @@
 import PostForm from "@/components/PostForm";
 import UserInformation from "@/components/UserInformation";
 import connectMongoDB from "@/lib/mongodb";
-import { SignedIn } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import {Post} from "@/mongodb/models/post";
 import PostFeed from "@/components/PostFeed";
@@ -18,7 +18,9 @@ export default async function Home() {
         <UserInformation posts={posts}/>
       </section> */}
       <section className="col-span-full md:col-span-6 xl:col-span-4 max-w-xl mx-auto w-full px-1">
-        {/* <UserInformation posts={posts}/> */}
+        <SignedOut>
+          <UserInformation posts={posts}/>
+        </SignedOut>
         <SignedIn>
           <PostForm/>
         </SignedIn>

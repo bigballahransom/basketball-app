@@ -74,7 +74,7 @@ function Post({ post }: { post: IPostDocument }) {
             <Badge className="">{post.sport}</Badge>
           )}
           {post.city && (
-            <Badge className="ml-2 bg-purple-500 text-white">
+            <Badge className="ml-2 bg-[#662d91] text-white">
               {post.city}
             </Badge>
           )}
