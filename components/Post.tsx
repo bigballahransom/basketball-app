@@ -11,6 +11,7 @@ import { Button } from "./ui/button";
 import ReactTimeago from "react-timeago";
 import { Badge } from "./ui/badge";
 import { toast } from "sonner";
+import { useState } from "react";
 
 function Post({ post }: { post: IPostDocument }) {
   const { user } = useUser();

@@ -119,7 +119,7 @@ function PostForm() {
         <div className="mt-2">
           <Select onValueChange={(value) => setNeighborhood(value)}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select Location" />
+              <SelectValue placeholder="Select Neighborhood" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Cascade Playground">Cascade Playground</SelectItem>

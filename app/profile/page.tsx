@@ -6,6 +6,7 @@ import { SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 import {Post} from "@/mongodb/models/post";
 import PostFeed from "@/components/PostFeed";
+import ProfileForm from '@/components/ProfileForm';
 
 export const revalidate = 0;
 
@@ -20,6 +21,7 @@ export default async function page() {
       </section> */}
       <section className="col-span-full md:col-span-6 xl:col-span-4 max-w-xl mx-auto w-full px-1">
       <UserInformation posts={posts}/>
+      <ProfileForm/>
       {/* <div className="flex flex-col justify-center items-center bg-white rounded-lg border py-4 mb-2">
       <div className="text-center text-xl font-bold">
         Coming Soon...
