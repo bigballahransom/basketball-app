@@ -12,7 +12,7 @@ export async function POST(request) {
   try {
     const message = await client.messages.create({
       body,
-      from: '+18559272961',
+      from: process.env.TWILIO_PHONE_NUMBER,
       to,
     });
     return NextResponse.json({ success: true, messageSid: message.sid });
