@@ -26,7 +26,7 @@ export default function RootLayout({
         <body className='min-h-screen flex flex-col'>
           {/* toast */}
           <Toaster/>
-          <header className='border-b sticky top-0 z-50'>
+          <header className='border-b sticky top-0 z-50 bg-white'>
             <Header/>
           </header>
           <div className='bg-[#F4F2ED] flex-1 w-full'>
